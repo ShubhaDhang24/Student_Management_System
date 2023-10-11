@@ -1,13 +1,17 @@
 package shubhaDhang;
 
-/**
- * Hello world!
- *
- */
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import shubhaDhang.config.ComponentScanConfig;
+import shubhaDhang.data_access.StudentDao;
+
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+
+        AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(ComponentScanConfig.class);
+        StudentDao studentDao=context.getBean(StudentDao.class);
+
     }
 }
